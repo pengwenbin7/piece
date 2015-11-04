@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Search</title>
+    <meta charset="utf-8">
+    <script src="jquery.min.js"></script>
+    <style>
+    div {
+      width: 200px;
+      height: 30px;
+      background-color: #ccc;
+      position: relative;
+    }
+    input {
+      float: right;
+      width: 0;
+      height: 18px;
+      line-height: 18px;
+      outline: none;
+      border: 1 solid #eee;
+    }
+    button {
+      float: right;
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 1;
+    }
+    .hidden {
+
+    }
+    </style>
+  </head>
+  <body>
+    <div>
+      <input class="hidden" type="text">
+      <button>go</button>
+    </div>
+    <script>
+    $(document).ready(function() {
+      $("button").mouseover(function() {
+	$("input").animate({width: 180});
+      });
+      $("input").mouseout(function() {
+	$("input").animate({width: 0});
+      });
+    });
+    </script>
+  </body>
+</html>
